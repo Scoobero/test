@@ -22,6 +22,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 resetGame()*/
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    var squares = document.querySelectorAll(".square");
+    var currentPlayer = "X";
+
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].addEventListener("click", function(event) {
+            if(event.target.innerHTML !== '') return;
+            event.target.innerHTML = currentPlayer;
+            if (currentPlayer === "X") {
+                currentPlayer = "O";
+            } else {
+                currentPlayer = "X";
+            }
+        });
+    }
+});
 
 var playerXScore = 0;
 var playerOScore = 0;
